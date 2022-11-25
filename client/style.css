@@ -1,0 +1,127 @@
+* {
+  z-index: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #eee;
+  padding: 24px;
+}
+
+button,
+input,
+textarea,
+.post {
+  z-index: 0;
+  color: #888;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  border: 1px solid #bbb;
+  background-color: #fbfbfb;
+  padding: 6px 12px;
+  transition: box-shadow 0.2s, color 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  user-select: none;
+  color: #888;
+  font-weight: 400;
+  font-style: italic;
+}
+
+button:hover,
+textarea:hover,
+input:hover,
+.post:hover {
+  z-index: 1;
+  color: #666;
+  box-shadow: 0 0 0 3px #eee;
+  transition: box-shadow 0.2s, color 0.15s;
+}
+
+button:active,
+input[type=submit]:active {
+  background-color: #eee;
+  box-shadow: 0 0 0 3px #ddd;
+  transition: 0.1s;
+}
+
+textarea {
+  height: 100%;
+  margin-bottom: 12px;
+  min-height: 15vh;
+  padding-top: 8px;
+  resize: vertical;
+}
+
+.panel {
+  position: relative;
+  width: min(80%, 400px);
+  max-height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #fff;
+  border-radius: 18px;
+  border: 1px solid #bbb;
+  box-shadow: 0 0 0 4px #ddd;
+  padding: 16px;
+}
+
+@media screen and (max-width: 450px) {
+  .panel { width: 100% }
+}
+
+#hide {
+  position: absolute;
+  min-width: 24px;
+  min-height: 24px;
+  top: 0px;
+  right: -42px;
+}
+
+.post {
+  margin-bottom: 8px;
+}
+
+.name {
+  color: #999;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.time {
+  color: #bbb;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+#feed {
+  display: flex;
+  overflow-y: auto;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.top {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.bottom {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
