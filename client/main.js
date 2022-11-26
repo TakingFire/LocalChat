@@ -7,7 +7,7 @@ ws.onopen = function(event) {
   $('#submit').val('Submit').prop('disabled', false);
 }
 
-ws.onclose = function() {
+ws.onclose = ws.onerror = function() {
   $('#submit').val('Disconnected').prop('disabled', true);
 }
 
@@ -33,10 +33,6 @@ $('#form').on('submit', function(e) {
   $('#input-text').val('');
   localStorage['name'] = $('#input-name').val();
   return false;
-})
-
-$('#hide').on('click', function() {
-  $('#form').children().not('#hide').toggle();
 })
 
 window.onbeforeunload = function() {
