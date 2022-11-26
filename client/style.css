@@ -22,11 +22,11 @@ input,
 textarea,
 .post {
   z-index: 0;
-  color: #888;
+  color: #444;
   font-size: 15px;
   font-weight: 500;
   border-radius: 12px;
-  border: 1px solid #bbb;
+  border: 1px solid #aaa;
   background-color: #fbfbfb;
   padding: 6px 12px;
   transition: box-shadow 0.2s, color 0.2s;
@@ -35,7 +35,7 @@ textarea,
 input::placeholder,
 textarea::placeholder {
   user-select: none;
-  color: #888;
+  color: #444;
   font-weight: 400;
   font-style: italic;
 }
@@ -45,7 +45,7 @@ textarea:hover,
 input:hover,
 .post:hover {
   z-index: 1;
-  color: #666;
+  color: #444;
   box-shadow: 0 0 0 3px #eee;
   transition: box-shadow 0.2s, color 0.15s;
 }
@@ -73,7 +73,7 @@ textarea {
   flex-flow: column nowrap;
   background-color: #fff;
   border-radius: 18px;
-  border: 1px solid #bbb;
+  border: 1px solid #aaa;
   box-shadow: 0 0 0 4px #ddd;
   padding: 16px;
 }
@@ -95,13 +95,13 @@ textarea {
 }
 
 .name {
-  color: #999;
+  color: #777;
   font-size: 15px;
   font-weight: 400;
 }
 
 .time {
-  color: #bbb;
+  color: #aaa;
   font-size: 14px;
   font-weight: 400;
   margin-left: 2px;
