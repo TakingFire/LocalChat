@@ -17,7 +17,7 @@ ws.onmessage = function(data) {
   const el = `<div class="post">
                 <span class="name">${msg.name}</span>
                 <span class="time" title="${time.toString()}">${time.getHours()%12+':'+time.getMinutes()}</span><br>
-                <span class="text">${msg.text.replaceAll('\n', '<br>')}</span>
+                <span class="text">${msg.text.replace(/\n/g, '<br>')}</span>
               </div>`;
   $('#feed').prepend(el);
 }
