@@ -7,13 +7,22 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+}
+
 #content {
-  width: 100vw;
+  width: min(80%, 448px);
+  min-width: 400px;
+  resize: horizontal;
+  overflow: hidden;
   height: 100vh;
   display: flex;
+  flex-shrink: 0;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: #eee;
   padding: 24px;
 }
 
@@ -45,7 +54,7 @@ textarea:hover,
 input:hover,
 .post:hover {
   z-index: 1;
-  color: #444;
+  color: #222;
   box-shadow: 0 0 0 3px #eee;
   transition: box-shadow 0.2s, color 0.15s;
 }
@@ -67,10 +76,10 @@ textarea {
 
 .panel {
   position: relative;
-  width: min(80%, 400px);
-  max-height: 80%;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
+  flex-shrink:0;
   background-color: #fff;
   border-radius: 18px;
   border: 1px solid #aaa;
@@ -88,6 +97,18 @@ textarea {
   min-height: 24px;
   top: 0px;
   right: -42px;
+}
+
+p {
+  text-align: center;
+  font-weight: 500;
+  color: #444;
+}
+
+#ip {
+  font-weight: 500;
+  font-size: 20px;
+  color: #222;
 }
 
 .post {
@@ -109,6 +130,7 @@ textarea {
 
 #feed {
   display: flex;
+  flex-shrink: 1;
   overflow-y: auto;
   flex-flow: column nowrap;
   height: 100%;

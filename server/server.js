@@ -41,7 +41,7 @@ socket.on('connection', (ws) => {
 
     const now = new Date();
     fs.writeFile(
-      `./logs/${now.getMonth()}-${now.getDate()}-${now.getFullYear()}.txt`,
+      `./logs/${now.getMonth()+1}-${now.getDate()}-${now.getFullYear()}.txt`,
       `${msg.name} - ${new Date(msg.time).toTimeString().split(' ')[0]}\n${msg.text}\n\n`,
       { flag: 'a'}
     );
