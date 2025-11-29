@@ -4,26 +4,31 @@
   margin: 0;
   padding: 0;
   outline: none;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   background-color: #eee;
+  overflow: hidden;
 }
 
 #content {
+  position: relative;
   width: min(80%, 448px);
   min-width: 400px;
   resize: horizontal;
-  overflow: hidden;
   height: 100vh;
   display: flex;
   flex-shrink: 0;
   flex-flow: column nowrap;
   align-items: center;
   padding: 24px;
+  transition: padding 0.15s;
+  gap: 16px;
 }
 
 button,
@@ -38,7 +43,9 @@ textarea,
   border: 1px solid #aaa;
   background-color: #fbfbfb;
   padding: 6px 12px;
-  transition: box-shadow 0.2s, color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    color 0.2s;
 }
 
 input::placeholder,
@@ -56,11 +63,13 @@ input:hover,
   z-index: 1;
   color: #222;
   box-shadow: 0 0 0 3px #eee;
-  transition: box-shadow 0.2s, color 0.15s;
+  transition:
+    box-shadow 0.2s,
+    color 0.15s;
 }
 
 button:active,
-input[type=submit]:active {
+input[type='submit']:active {
   background-color: #eee;
   box-shadow: 0 0 0 3px #ddd;
   transition: 0.1s;
@@ -79,16 +88,18 @@ textarea {
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
-  flex-shrink:0;
+  flex-shrink: 0;
   background-color: #fff;
-  border-radius: 18px;
+  border-radius: 16px;
   border: 1px solid #aaa;
   box-shadow: 0 0 0 4px #ddd;
   padding: 16px;
 }
 
 @media screen and (max-width: 450px) {
-  .panel { width: 100% }
+  .panel {
+    width: 100%;
+  }
 }
 
 #hide {
@@ -113,6 +124,10 @@ p {
 
 .post {
   margin-bottom: 8px;
+}
+
+.post .text {
+  white-space: pre;
 }
 
 .name {
@@ -147,3 +162,31 @@ p {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-top: none;
+}
+
+#sidebar {
+  position: absolute;
+  right: -24px;
+  margin-left: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+#toggle-input,
+#toggle-qr {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 400px) {
+  #content {
+    padding: 0;
+    width: 100vw;
+    min-width: 100vw;
+  }
+
+  .panel {
+    border-radius: 0;
+  }
+}

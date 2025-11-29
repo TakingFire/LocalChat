@@ -7,19 +7,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
+    <script src="qrcode.min.js"></script>
     <script defer type="text/javascript" src="main.js"></script>
   </head>
   <body>
     <div id="content">
-      <div class="panel" style="display: none; margin-bottom: 24px; padding: 8px 16px">
+      <div class="panel" style="display: none; padding: 8px 16px">
         <p>To connect, use the address:</p>
-        <p id="ip">000.000.0.0</p>
+        <p id="ip">Address not found</p>
+        <div id="qrcode" style="align-self: center; margin-top: 8px"></div>
       </div>
-      <form id="form" class="panel" onSubmit="" style="margin-bottom: 24px" title="">
+      <form id="form" class="panel" onSubmit="" title="">
         <input id="input-name" class="top" type="text" placeholder="Name (optional)" />
         <textarea id="input-text" class="bottom" placeholder="Question/comment..." required></textarea>
         <input id="submit" type="submit" disabled value="Connecting..." />
       </form>
+      <!--<div id="sidebar">
+        <button id="toggle-input"></button>
+        <button id="toggle-qr"></button>
+      </div>-->
 
       <div id="feed" class="panel"></div>
     </div>
