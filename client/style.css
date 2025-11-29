@@ -124,10 +124,11 @@ p {
 
 .post {
   margin-bottom: 8px;
+  border-top-left-radius: 4px;
 }
 
 .post .text {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .name {
