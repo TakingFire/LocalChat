@@ -10,12 +10,11 @@ const alert_audio =
 const alert = new Audio(alert_audio);
 alert.volume = 0.5;
 
-let ws = new WebSocket(`ws://${location.host}:8000`);
+let ws = new WebSocket(`ws://${location.hostname}:8000`);
 
-$('#ip').html(location.hostname);
+$('#ip').html(location.host);
 
 $('#input-name').val(localStorage['name'] || '');
-console.log(location.hostname);
 
 ws.onopen = function (event) {
   $('#submit').val('Submit').prop('disabled', false);
